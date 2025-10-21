@@ -1,0 +1,2 @@
+# 2024A-Firzakarin-Sayyidatina-24051204017---Project-Mandiri-PBP-2025-2026-Ganjil
+Proyek ini adalah website portofolio pribadi yang menampilkan profil, pengalaman kerja, dan proyek-proyek UI/UX maupun pengembangan aplikasi milik Firzakarin. Website ini dirancang interaktif dan responsif, dilengkapi efek animasi scroll, carousel untuk pengalaman kerja, serta 3D visual interaktif menggunakan Spline Viewer.
