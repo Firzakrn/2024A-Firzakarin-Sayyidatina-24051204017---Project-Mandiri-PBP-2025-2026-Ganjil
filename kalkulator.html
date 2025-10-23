@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas Kalkulator</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .close {
+      text-decoration: none;
+      color: white;
+      background: crimson;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .close:hover {
+      background: darkred;
+    }
+    
+    .calculator {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    #display {
+      width: 240px;
+      height: 50px;
+      text-align: right;
+      font-size: 24px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      background: rgba(255,255,255,0.8);
+      color: #333;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 60px);
+      gap: 10px;
+    }
+
+    button {
+      height: 60px;
+      font-size: 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: rgba(255,255,255,0.4);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Kalkulator Sederhana</h1>
+  <div class="calculator">
+    <input type="text" id="display" placeholder="0" readonly>
+    <div class="buttons">
+      <button >7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>/</button>
+
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>*</button>
+
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>-</button>
+
+      <button>0</button>
+      <button>.</button>
+      <button>=</button>
+      <button>+</button>
+    </div>
+  </div>
+
+<footer>
+  <a href="projects.html" class="close">&times; BACK &times;</a>
+</footer>
+
+  <script>
+    const layar = document.getElementById('display');   // DOM
+    const tombol = document.querySelectorAll('.buttons button');
+
+    let urutanInput = [];   // array simpan input user
+    let hasilTerakhir = null;
+    let baruSelesai = false; // menandakan user baru menekan "="
+
+    function tampilkanInput() {
+      layar.value = urutanInput.join(' ');  // menampilkan input 
+    }
+
+    tombol.forEach(t => {   // perulangan array
+      t.addEventListener('click', () => {   // ketika tombol di click maka trigger event dibwh
+        const isiTombol = t.textContent;
+
+        if (!isNaN(parseFloat(isiTombol)) || isiTombol === '.') {
+          handleNumber(isiTombol);
+        } 
+        else if (['+', '-', '*', '/'].includes(isiTombol)) {
+          handleOperator(isiTombol);
+        } 
+        else if (isiTombol === '=') {
+          hitungHasil();
+        } 
+        else if (isiTombol === 'C') {
+          resetKalkulator();
+        }
+      });
+    });
+
+    function handleNumber(angka) {
+      if (baruSelesai && urutanInput.length === 1) {
+          resetKalkulator();
+      } // cek apakah operasi baru atau reset
+      baruSelesai = false;
+      const terakhir = urutanInput[urutanInput.length - 1];
+      // kalau belum ada input atau terakhir operator tambah angka baru
+      if (urutanInput.length === 0 || ['+', '-', '*', '/'].includes(terakhir)) {
+        urutanInput.push(angka);  // tambah isi array
+      } else {
+        urutanInput[urutanInput.length - 1] = terakhir + angka;   // kalau terakhir angka, gabungkan jadi satu angka
+      }
+
+      tampilkanInput(); // setiap tambah angka ditampilkan lewat fungsi ini
+    }
+
+    function handleOperator(op) {
+      if (baruSelesai) {
+        baruSelesai = false;  // ketika user melakukan operasi baru lagi dgn menambah operator diblkg hasil maka flag diubah ke salah jadi tdk reset
+        urutanInput = [String(hasilTerakhir)];  // array sementara menyimpan hasil total terakhir
+      } 
+
+      // kalau baru pertama kali tekan operator
+      if (urutanInput.length === 1) {
+        urutanInput.push(op); // menambah operator di 
+      }
+      // kalau sudah ada angka1 operator angka2 langsung hitung
+      else if (urutanInput.length === 3) {
+        hitungHasil();
+        urutanInput = [String(hasilTerakhir), op];  // menambah array hasil terakhir ke dalam array utama
+      }
+      // kalau user cuma ganti operator sebelum isi angka kedua
+      else if (urutanInput.length === 2 && ['+', '-', '*', '/'].includes(urutanInput[1])) {
+        urutanInput[1] = op;
+      }
+
+      tampilkanInput();
+    }
+
+    function hitungHasil() {
+      if (urutanInput.length < 3) return;
+
+      const [angka1, operator, angka2] = urutanInput;
+      const a = parseFloat(angka1);
+      const b = parseFloat(angka2);
+      let hasil = 0;
+
+      switch (operator) {
+        case '+': hasil = a + b; break;
+        case '-': hasil = a - b; break;
+        case '*': hasil = a * b; break;
+        case '/': hasil = b !== 0 ? a / b : 'Error'; break;
+      }
+
+      layar.value = hasil;  // menampilkan hasil bukan array nya
+      hasilTerakhir = hasil;    // array sementara untuk hasil ketika operasi berlanjut (tidak menekan = tapi lgsg lanjut operator lain)
+      urutanInput = [String(hasil)];  // reset array jadi isinya hanya hasil terakhr
+      baruSelesai = true;
+    }
+
+    function resetKalkulator() {
+      urutanInput = [];
+      hasilTerakhir = null;
+      baruSelesai = false;
+      layar.value = '0';
+    }
+    resetKalkulator();
+  </script>
+
+</body>
+</html>

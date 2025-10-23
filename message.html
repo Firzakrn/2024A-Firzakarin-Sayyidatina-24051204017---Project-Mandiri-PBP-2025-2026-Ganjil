@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="looks.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.82/build/spline-viewer.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <header> 
+    <nav class="navbar">
+        <div class="container-fluid">
+        <div class="nav-links">
+            <a data-aos="fade-down" data-aos-duration="1000" href="home.html" class="nav-link">Home</a>
+            <a data-aos="fade-down" data-aos-duration="1500" href="experience.html" class="nav-link">Experience</a>
+            <a data-aos="fade-down" data-aos-duration="2000" href="projects.html" class="nav-link">Project</a>
+            <a data-aos="fade-down" data-aos-duration="2500" href="#abt" class="nav-link">Contact</a>
+        </div>
+            <a data-aos="fade-down" data-aos-duration="2500" href="message.html" id="chatBtn" class="btn">Message Me</a>
+        </div>
+    </nav>
+    </header>
+    <div class="side-by-side-container">
+        <div id="modal" class="msg glassCard">
+            <div class="chat-header">
+                <h3>Message Me</h3>
+                <span class="close">&times;</span>
+            </div>
+            
+            <form id="chatForm">
+                <label>Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label>Comment:</label>
+                <textarea id="comment" placeholder="Write something..." required></textarea>
+
+                <label>Love this web?</label>
+                <input type="range" id="loveSlider" min="0" max="100" value="50">
+
+                <div class="toggle-box">
+                <label class="toggle">
+                    <input type="checkbox" id="anonToggle">
+                    <span class="slider"></span>
+                </label>
+                <p>Send anonymously</p>
+                </div>
+
+                <button type="submit" class="btn">Send</button>
+            </form>
+        </div>
+
+        <div class="contact glassCard">
+            <h3> OTHER MESSAGE:</h3>
+            <ul>
+            <li><i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/frzkaaa_r">@frzkaaa_r</a></li>
+            <li><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/firza-karin-187434286">Firzakarin</a></li>
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:24051204017@mhs.unesa.ac.id">24051204017@mhs.unesa.ac.id</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="messageBox.js"></script>
+</body>
+</html>
