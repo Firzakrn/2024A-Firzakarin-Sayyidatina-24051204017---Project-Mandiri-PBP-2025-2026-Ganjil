@@ -16,3 +16,26 @@ Additional Library:
 - penggunaan Aos Animation untuk animasi navbar. (https://michalsnik.github.io/aos/)
 
 Link Youtube : https://youtu.be/jucUIFc4_6Q
+
+*★,°*:----------------------------------STRUKTUR HALAMAN DAN DESKRIPSI ------------------------------------------:*.°★* 。
+
+**1. HOME**
+![alt text](https://github.com/Firzakrn/2024A-Firzakarin-Sayyidatina-24051204017---Project-Mandiri-PBP-2025-2026-Ganjil/blob/main/Tampilan%20Web/HOME.png)
+Glasscard berisi Judul dan Deskripsi singkat tentang pembuat, dibawahnya ada tombol yang mengarahkan ke halaman experience dan menampilkan floating window untuk Comment. Disampingnya terdapat obyek 3D dari spliner. Berikut tampilan dari floating window Comment :
+![alt text](https://github.com/Firzakrn/2024A-Firzakarin-Sayyidatina-24051204017---Project-Mandiri-PBP-2025-2026-Ganjil/blob/main/Tampilan%20Web/FLOATwndw.png)
+
+**2. EXPERIENCE**
+![alt text](https://github.com/Firzakrn/2024A-Firzakarin-Sayyidatina-24051204017---Project-Mandiri-PBP-2025-2026-Ganjil/blob/main/Tampilan%20Web/EXPERIENCE.png)
+Glasscard berisi carousel foto auto slider, disampingnya terdapat detail nama pt, posisi, durasi kerja dan list jobdesk pengalaman kerja yang pernah dilakukan pembuat.   
+
+**3. PROJECT**
+![alt text](https://github.com/Firzakrn/2024A-Firzakarin-Sayyidatina-24051204017---Project-Mandiri-PBP-2025-2026-Ganjil/blob/main/Tampilan%20Web/PROJECT.png) 
+Glasscard berisi 3 card, di dalamnya terdapat foto preview projek pembuat, judul, detail ssingkat dari projek terkait.
+
+**4. MESSAGE CARD**
+![alt text](https://github.com/Firzakrn/2024A-Firzakarin-Sayyidatina-24051204017---Project-Mandiri-PBP-2025-2026-Ganjil/blob/main/Tampilan%20Web/MESSAGE.png)
+Glasscard dibuat berbeda yang berisi kolom email, kolom komen, slider, toggle email, dan tombol send. Berbeda dengan contact pada halaman lain, di halaman ini letaknya disampingnya terdapat contact. 
+
+**FOOTER**
+
+Berisi informasi kontak pembuat.
