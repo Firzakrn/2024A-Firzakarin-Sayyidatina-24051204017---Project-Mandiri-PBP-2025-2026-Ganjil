@@ -14,3 +14,5 @@ Additional Library:
 - Penggunaan font awesome untuk icon (https://fontawesome.com/icons)
 - Penggunaan Spline Viewer untuk visual 3D di halaman Home. (https://spline.design/)
 - penggunaan Aos Animation untuk animasi navbar. (https://michalsnik.github.io/aos/)
+
+Link Youtube : https://youtu.be/jucUIFc4_6Q
