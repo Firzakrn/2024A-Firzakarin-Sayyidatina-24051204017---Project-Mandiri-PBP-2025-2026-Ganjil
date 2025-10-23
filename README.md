@@ -30,12 +30,12 @@ Glasscard berisi carousel foto auto slider, disampingnya terdapat detail nama pt
 
 **3. PROJECT**
 ![alt text](https://github.com/Firzakrn/2024A-Firzakarin-Sayyidatina-24051204017---Project-Mandiri-PBP-2025-2026-Ganjil/blob/main/Tampilan%20Web/PROJECT.png) 
-Glasscard berisi 3 card, di dalamnya terdapat foto preview projek pembuat, judul, detail ssingkat dari projek terkait.
+Glasscard berisi 3 card, di dalamnya terdapat foto preview projek pembuat, judul, detail singkat dari projek terkait. Dibawahnya terdapat video demo projek yang pernah dilakukan pembuat.
 
 **4. MESSAGE CARD**
 ![alt text](https://github.com/Firzakrn/2024A-Firzakarin-Sayyidatina-24051204017---Project-Mandiri-PBP-2025-2026-Ganjil/blob/main/Tampilan%20Web/MESSAGE.png)
 Glasscard dibuat berbeda yang berisi kolom email, kolom komen, slider, toggle email, dan tombol send. Berbeda dengan contact pada halaman lain, di halaman ini letaknya disampingnya terdapat contact. 
 
 **FOOTER**
-
+![alt text](https://github.com/Firzakrn/2024A-Firzakarin-Sayyidatina-24051204017---Project-Mandiri-PBP-2025-2026-Ganjil/blob/main/Tampilan%20Web/CONTACT.jpg)
 Berisi informasi kontak pembuat.
